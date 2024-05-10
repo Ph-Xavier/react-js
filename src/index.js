@@ -1,16 +1,20 @@
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import Button from "./components/Button";
+
+const container = document.getElementById("app");
+const root = createRoot(container);
 
 class App extends React.Component {
   render() {
     return (
-      <h1>
-        Hello React!!
-        <Button />
-      </h1>
+      <div>
+        <Button title="Teste" descricao="asasas">
+          Update
+        </Button>
+      </div>
     );
   }
 }
 
-render(<App />, document.getElementById("app"));
+root.render(<App tab="home" />);

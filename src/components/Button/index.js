@@ -1,8 +1,30 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Button extends Component {
+  static defaultProps = {
+    title: "Comportamento padrão",
+    descricao: "Descrição padrão",
+  };
+
+  /* Ou 
+    Button.defaultProps = {
+      title: "Comportamento padrão",
+      descricao: "Descrição padrão",
+    }:
+  */
+
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+  };
+
   render() {
-    return <button>Salvar</button>;
+    return (
+      <div>
+        {this.props.title}-{this.props.descricao}
+        <button>{this.props.children}</button>
+      </div>
+    );
   }
 }
 
