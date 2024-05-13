@@ -6,12 +6,21 @@ const container = document.getElementById("app");
 const root = createRoot(container);
 
 class App extends React.Component {
+  state = {
+    contador: 0,
+  };
+
+  adicionar = () => {
+    this.setState({
+      contador: this.state.contador++,
+    });
+  };
+
   render() {
     return (
       <div>
-        <Button title="Teste" descricao="asasas">
-          Update
-        </Button>
+        contador: {this.state.contador++}
+        <Button press={this.adicionar}>Update</Button>
       </div>
     );
   }
