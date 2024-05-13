@@ -1,24 +1,7 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 
-class Button extends Component {
-  /*
-  static defaultProps = {
-    title: "Comportamento padrão",
-    descricao: "Descrição padrão",
-  };
-
-   Ou 
-
-    Button.defaultProps = {
-      title: "Comportamento padrão",
-      descricao: "Descrição padrão",
-    }:
-  */
-
-  render() {
-    return <button onClick={this.props.press}>{this.props.children}</button>;
-  }
-}
+const Button = (props) => {
+  return <button onClick={props.press}>{props.children}</button>;
+};
 
 export default Button;
